@@ -17,7 +17,7 @@ const weather = (lat, long, callback) => {
 }
 
 const toCelcius = (faren) => {
-    return (50 - 32)*(5/9)
+    return (faren - 32)*(5/9)
 }
 
 module.exports = weather
