@@ -13,7 +13,7 @@ weatherform.addEventListener('submit', (e) => {
     const location = search.value
 
     //fetch makes a requests data from a http
-    fetch('http://localhost:3000/weather?address="' + location + '"').then((response) => {
+    fetch('/weather?address="' + location + '"').then((response) => {
     //.then() takes the response from the http and lets you do something with it in a function 
     response.json().then((data) => {
         if (data.error) {
