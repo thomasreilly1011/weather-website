@@ -9,11 +9,15 @@ const weather = (lat, long, callback) => {
             } else if (response.body.error) {
                 callback('Unable to find location')
             } else {
-                const currTemp = (response.body.currently.temperature)
+                const currTemp = (toCelcius(response.body.currently.temperature.toCelcius))
                 const currRain = (response.body.currently.precipProbability)
                 callback(undefined, 'It is currently ' + currTemp + ' degrees out. There is a ' + currRain + '% chance of precipitaion')
             }
         })   
+}
+
+const toCelcius = (faren) => {
+    return (50 - 32)*(5/9)
 }
 
 module.exports = weather
